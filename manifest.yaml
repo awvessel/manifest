@@ -117,7 +117,7 @@ containers:
     dependencies:
       - mysql_data
     ports:
-      - 27017
+      - 3306
 
   - name: PostgreSQL
     category: Low-Level
