@@ -173,19 +173,19 @@ ssh:
       -----END RSA PRIVATE KEY-----
 
 vagrant:
-  box: coreos-beta
+  box: coreos-alpha
   cpu_count: 2
   ram: 2048
-  hostname: awdev
+  hostname: vessel-public
   network:
     type: private
     ip: 192.168.50.101
   providers:
     - name: virtualbox
-      min_version: 367.1.0
+      min_version: 402.2.0
       url: http://storage.core-os.net/coreos/amd64-usr/alpha/coreos_production_vagrant.json
     - name: vmware_fusion
-      min_version: 367.1.0
+      min_version: 402.2.0
       url: http://storage.core-os.net/coreos/amd64-usr/alpha/coreos_production_vagrant_vmware_fusion.json
   synced_folders:
     - name: scripts
