@@ -85,15 +85,6 @@ containers:
       - 8090
       - 8099
 
-  - name: Kibana
-    category: Application
-    dependencies:
-      - Elasticsearch
-    icon: elasticsearch
-    image: aweber/elasticsearch
-    ports:
-      - 9201
-
   - name: Memcached
     category: Low-Level
     icon: memcached
