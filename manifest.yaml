@@ -9,13 +9,19 @@ containers:
     volumes:
       - /var/lib/mongodb
 
+  - name: mysql_data
+    image: aweber/mysqldata
+    standalone: true
+    visible: false
+    volumes:
+      - /var/lib/mysql
+
   - name: pgsql_data
     image: aweber/pgdata
     standalone: true
     visible: false
     volumes:
       - /var/lib/postgresql
-      - /tmp/postgresql
 
   - name: redis_data
     image: aweber/redisdata
@@ -41,6 +47,15 @@ containers:
     ports:
       - 9200
       - 9300
+
+  - name: Ghost
+    category: Application
+    icon: nodejs
+    image: aweber/ghost
+    ports:
+      - 2368
+    repository:
+      url: https://github.com/TryGhost/Ghost.git
 
   - name: Grafana
     category: Application
@@ -92,6 +107,15 @@ containers:
     image: aweber/mongodb
     dependencies:
       - mongodb_data
+    ports:
+      - 27017
+
+  - name: MySQL
+    category: Low-Level
+    icon: mysql
+    image: aweber/mysql
+    dependencies:
+      - mysql_data
     ports:
       - 27017
 
