@@ -16,13 +16,6 @@ containers:
     volumes:
       - /var/lib/mysql
 
-  - name: pgsql_data
-    image: aweber/pgdata
-    standalone: true
-    visible: false
-    volumes:
-      - /var/lib/postgresql
-
   - name: redis_data
     image: aweber/redisdata
     standalone: true
@@ -112,8 +105,6 @@ containers:
 
   - name: PostgreSQL
     category: Low-Level
-    dependencies:
-      - pgsql_data
     icon: postgresql
     image: aweber/postgresql
     ports:
